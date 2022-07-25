@@ -1,56 +1,109 @@
-import React from "react";
+import React, { useState } from "react";
 import { HeaderBlock } from "./HeaderElements";
 import logo from "../../images/logo.png";
-
+import { Link } from "react-scroll";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 function Header() {
-  const handleScrollSmooth = (e) => {
-    console.log("aaa");
+  const [fixed, setFixed] = useState(false);
+  const [nav, setNav] = useState("hidden");
+  const setNavBarFixed = () => {
+    if (window.scrollY >= 700) {
+      setFixed(true);
+    } else {
+      setFixed(false);
+    }
+  };
+  window.addEventListener("scroll", setNavBarFixed);
+
+  const handleOpenMainNav = () => {
+    setNav("open");
+  };
+  const handleCloseMainNav = () => {
+    setNav("close");
   };
   return (
     <>
       <HeaderBlock>
-        <div className='header-container'>
-          <a href='index.html'>
+        <div className={fixed ? "header-container fixed" : "header-container"}>
+          <Link to='/'>
             <img src={logo} alt='header of logo' className='logo' />
-          </a>
-          <ul className='main-nav'>
+          </Link>
+          <ul className={nav === "open" ? "main-nav nav-open" : "main-nav"}>
             <li>
-              <a
-                href='#services'
+              <Link
+                to='services'
+                spy={true}
+                smooth={true}
+                offset={110}
+                duration={500}
                 className='main-nav-link'
-                onClick={handleScrollSmooth}
+                onClick={handleCloseMainNav}
               >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='#skills'
+              <Link
+                to='skills'
+                spy={true}
+                smooth={true}
+                offset={90}
+                duration={500}
                 className='main-nav-link'
-                onClick={handleScrollSmooth}
+                onClick={handleCloseMainNav}
               >
                 Skills
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='#footer'
+              <Link
+                spy={true}
+                smooth={true}
+                offset={90}
+                duration={500}
+                to='footer'
                 className='main-nav-link'
-                onClick={handleScrollSmooth}
+                onClick={handleCloseMainNav}
               >
                 Projects
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='#footer'
+              <Link
+                spy={true}
+                smooth={true}
+                offset={90}
+                duration={500}
+                to='footer'
                 className='main-nav-link'
-                onClick={handleScrollSmooth}
+                onClick={handleCloseMainNav}
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
+          <div>
+            <button>
+              <AiOutlineMenu
+                className={
+                  nav === "open"
+                    ? "header-icon menu hidden"
+                    : "header-icon menu"
+                }
+                onClick={handleOpenMainNav}
+              />
+            </button>
+            <button>
+              <AiOutlineClose
+                className={
+                  nav === "open"
+                    ? "header-icon close display"
+                    : "header-icon close"
+                }
+                onClick={handleCloseMainNav}
+              />
+            </button>
+          </div>
         </div>
       </HeaderBlock>
     </>

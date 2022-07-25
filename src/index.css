@@ -1,6 +1,8 @@
 body {
+  position: relative;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -10,6 +12,7 @@ body {
 }
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 * {
   color: #112a46;
@@ -44,13 +47,85 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  margin-top: 6.4rem;
+  margin-top: 9.6rem;
 }
 .list-item {
   display: flex;
   gap: 2rem;
   align-items: center;
   list-style: none;
+}
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.close {
+  display: none;
+}
+
+/* RESPONSIVE */
+/***************************************
+BELOW 1200px(Landscape Tablets)
+****************************************/
+@media (max-width: 84em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 72em) {
+  html {
+    font-size: 50%;
+  }
+}
+/***************************************
+BELOW 944px(Tablets)
+****************************************/
+@media (max-width: 59em) {
+  html {
+    font-size: 37.5%;
+  }
+  .main-nav {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.97);
+    margin-top: 0;
+    z-index: 99;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.8s ease;
+  }
+  .skills__block {
+    row-gap: 6rem;
+  }
+  .extra {
+    justify-self: center;
+  }
+}
+/***************************************
+BELOW 704px(Smaller Tablets)
+****************************************/
+@media (max-width: 44em) {
+  html {
+    font-size: 31.25%;
+  }
+  .services {
+    margin-left: 4rem;
+  }
+}
+/***************************************
+BELOW 544px(PHONES)
+****************************************/
+@media (max-width: 34em) {
+  html {
+    font-size: 25%;
+  }
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

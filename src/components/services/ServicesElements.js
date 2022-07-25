@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Palette from "../../lib/Palette";
 
 import { MdOutlineDesktopMac } from "react-icons/md";
 import { SiMaterialdesign } from "react-icons/si";
@@ -10,6 +9,10 @@ const ServicesElementsBlock = styled.div`
   padding: 9.6rem 0;
   .services__block {
     margin-top: 6.4rem;
+    /* @media (max-width: 44em) {
+      grid-template-columns: 1fr;
+      row-gap: 12rem;
+    } */
   }
   .icon {
     width: 2.4rem;
@@ -17,12 +20,11 @@ const ServicesElementsBlock = styled.div`
   }
   .icon-bgc {
     display: inline-block;
-    background-color: ${Palette.yellow[2]};
+    background-color: #d3f9d8;
     padding: 1.5rem;
     border-radius: 50%;
   }
   .service {
-    width: 65%;
     justify-self: center;
   }
   .title {
@@ -38,8 +40,8 @@ const ServicesElementsBlock = styled.div`
 `;
 const ServicesElements = () => {
   return (
-    <ServicesElementsBlock className='container'>
-      <h2>services</h2>
+    <ServicesElementsBlock className='container' id='services'>
+      <h2 className='services'>services</h2>
       <div className='services__block grid grid--2-cols'>
         <div className='service'>
           <div className='icon-bgc'>
@@ -47,7 +49,7 @@ const ServicesElements = () => {
           </div>
           <p className='title'>UI作成</p>
           <p className='text'>
-            HTML5, CSS3, Javascrip等 を用いてWebサイトのフロント エンド作成
+            HTML5, CSS3, Javascrip等 を用いてWebサイトのUI作成
           </p>
         </div>
         <div className='service'>

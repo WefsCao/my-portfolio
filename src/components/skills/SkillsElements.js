@@ -4,13 +4,18 @@ import Palette from "../../lib/Palette";
 import ProgressBar from "../../middlewares/ProgressBar";
 import { BsCheckLg } from "react-icons/bs";
 const SkillsElementsBlock = styled.div`
-  padding: 9.6rem 0;
+  padding: 7rem 9.6rem;
   .center {
-    transform: translateX(45rem);
+    transform: translateX(50rem);
   }
   .skills-content {
     margin-top: 6.4rem;
     align-items: center;
+    @media (max-width: 59em) {
+      grid-template-columns: 1fr;
+      row-gap: 18rem;
+      margin-top: 15rem;
+    }
   }
   .skill {
     font-size: 2.2rem;
@@ -18,15 +23,15 @@ const SkillsElementsBlock = styled.div`
   }
   .skills__block {
     display: grid;
-    grid-template-columns: 25fr 75fr;
+    grid-template-columns: 1fr 1fr;
+    justify-self: center;
     column-gap: 2.4rem;
-    row-gap: 8rem;
   }
 `;
 export const ExtraSkills = styled.div`
   width: 50rem;
   height: 80rem;
-  background-color: ${Palette.yellow[2]};
+  background-color: ${Palette.green[0]};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,8 +64,8 @@ export const ExtraSkills = styled.div`
 `;
 const SkillsElements = () => {
   return (
-    <SkillsElementsBlock className='container'>
-      <h2 className='center'>skills</h2>
+    <SkillsElementsBlock className='container' id='skills'>
+      <h2>skills</h2>
       <div className=' skills-content grid grid--2-cols'>
         <div className='skills__block'>
           <p className='skill'>HTML5</p>
@@ -76,7 +81,7 @@ const SkillsElements = () => {
           <ProgressBar currentProgressVal={80} />
           <p className='skill'>Java</p>
         </div>
-        <ExtraSkills>
+        <ExtraSkills className='extra'>
           <p className='extra-title'>Extra Skills</p>
           <ul className='list'>
             <li className='list-item'>

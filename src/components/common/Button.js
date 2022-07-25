@@ -17,7 +17,7 @@ const ButtonBlock = styled.button`
     props.primary &&
     css`
       &:hover {
-        background-color: #f59f00;
+        background-color: #51cf66;
         color: #eee;
       }
     `}
@@ -27,8 +27,8 @@ const ButtonBlock = styled.button`
       border: 3px solid #fff;
       background-color: transparent;
       &:hover {
-        border: 3px solid #f59f00;
-        background-color: #f59f00;
+        /* border: 3px solid #f59f00; */
+        background-color: #fff;
         color: #fff;
       }
     `}

@@ -25,9 +25,9 @@ const CircularProgress = styled.div`
   }
   background-image: ${(props) =>
     props.progressValue &&
-    `conic-gradient(${Palette.yellow[0]} ${
-      props.progressValue * 3.6
-    }deg, #ffec99 ${360 - props.progressValue * 3.6}deg)`};
+    `conic-gradient(${Palette.green[2]} ${props.progressValue * 3.6}deg, ${
+      Palette.green[0]
+    } ${360 - props.progressValue * 3.6}deg)`};
 `;
 
 const ProgressBar = ({ currentProgressVal }) => {

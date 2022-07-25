@@ -1,18 +1,37 @@
 import React from "react";
 import styled from "styled-components";
 import Palette from "../../lib/Palette";
-
-import heroImg from "../../images/hero-img02.png";
-
+import { Link } from "react-scroll";
+import heroImg from "../../images/hero-image.png";
+const Container = styled.div`
+  @media (max-width: 73.5em) {
+    padding: 0 3rem;
+  }
+`;
 const HeroElementsBlock = styled.div`
   height: 55rem;
-  background-color: ${Palette.yellow[0]};
+  background-color: ${Palette.green[0]};
   margin: 0;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10rem;
+    right: -4rem;
+    width: 60rem;
+    height: 60rem;
+    border-radius: 50%;
+  }
   h1 {
     margin-top: 8rem;
     font-size: 4rem;
     line-height: 1.3;
     max-width: 50rem;
+    @media (max-width: 73.5em) {
+      font-size: 3.7rem;
+      line-height: 1.4;
+    }
   }
   .btns {
     margin-top: 8rem;
@@ -20,7 +39,16 @@ const HeroElementsBlock = styled.div`
   .hero-img-box {
     background-size: cover;
     background-position: center;
-    transform: translate(140px, -118px);
+    transform: translate(250px, -110px);
+    @media (max-width: 75em) {
+      transform: translate(200px, -110px);
+    }
+    @media (max-width: 59em) {
+      transform: translate(200px, -70px);
+    }
+    @media (max-width: 44em) {
+      transform: translate(30px, -55px);
+    }
   }
   .img {
     width: 37.5rem;
@@ -35,60 +63,63 @@ const HeroElementsBlock = styled.div`
     padding: 2rem 4rem;
     font-size: 2rem;
     border-radius: 1.6rem;
-  }
-  .btn--contact {
-    background-color: #f59f00;
-    color: #eee;
-    margin-right: 3.4rem;
-    &:hover {
-      background-color: #fff;
-      color: #f59f00;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.2);
+    @media (max-width: 34em) {
+      padding: 1.5rem 2.5rem;
+      font-size: 1rem;
     }
   }
-  .btn--about {
-    border: 3px solid #fff;
-    background-color: transparent;
+  .btn--contact {
+    background-color: #112a46;
+    margin-right: 3.4rem;
+    color: #fff;
     &:hover {
-      border: 3px solid #f59f00;
-      background-color: #f59f00;
+      background-color: RGBA(17, 42, 70, 0.85);
       color: #fff;
     }
   }
-`;
-const HeroElements = () => {
-  const handleScrollSmooth = (e) => {
-    const href = e.target.getAttribute("href");
-    if (href !== "#" && href.startsWith("#")) {
-      const sectionEl = document.querySelector(href);
-      sectionEl.scrollIntoView({ behavior: "smooth" });
+  .btn--about {
+    background-color: #fff;
+    &:hover {
+      box-shadow: 0 0 0 4px #fff;
+      background-color: transparent;
+      color: #112a46;
     }
-  };
+  }
+`;
+
+const HeroElements = () => {
   return (
-    <HeroElementsBlock>
-      <div className='container grid grid--2-cols'>
+    <HeroElementsBlock id='hero'>
+      <Container className='container grid grid--2-cols'>
         <div className='hero-text-box'>
           <h1>初めまして。カオと申します。Webフロントエンドの開発者です。</h1>
           <div className='btns'>
-            <a
-              href='#contact'
+            <Link
+              spy={true}
+              smooth={true}
+              offset={90}
+              duration={500}
+              to='footer'
               className='links btn--contact'
-              onClick={handleScrollSmooth}
             >
               Contact me
-            </a>
-            <a
-              href='#about'
+            </Link>
+            <Link
+              spy={true}
+              smooth={true}
+              duration={500}
+              to='about'
               className='links btn--about'
-              onClick={handleScrollSmooth}
             >
               About me
-            </a>
+            </Link>
           </div>
         </div>
         <div className='hero-img-box'>
           <img src={heroImg} alt='' className='img' />
         </div>
-      </div>
+      </Container>
     </HeroElementsBlock>
   );
 };

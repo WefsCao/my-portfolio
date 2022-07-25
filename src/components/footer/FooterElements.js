@@ -5,9 +5,9 @@ import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 import Palette from "../../lib/Palette";
 const FooterElementsBlock = styled.div`
-  margin-top: 18rem;
+  margin-top: 20rem;
   border-top: 1px solid #dadada;
-  padding: 12.8rem 0;
+  padding: 14.8rem 0;
   .social-links {
     display: flex;
     align-items: center;
@@ -47,22 +47,39 @@ const FooterElementsBlock = styled.div`
     width: 17rem;
     border-radius: 5px;
     text-decoration: none;
-    background-color: ${Palette.yellow[1]};
+    background-color: ${Palette.green[0]};
     padding: 1rem;
     margin-bottom: 1.8rem;
     font-weight: 600;
     font-size: 1.4rem;
     &:hover {
-      background-color: ${Palette.yellow[0]};
+      background-color: ${Palette.green[1]};
+    }
+    @media (max-width: 59em) {
+      width: 70%;
+    }
+  }
+  .footer-container {
+    @media (max-width: 34em) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 12.8rem 3rem;
     }
   }
 `;
 const FooterElements = () => {
+  const handleScrollToTop = (e) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
-    <FooterElementsBlock>
-      <div className=' container grid grid--3-cols'>
+    <FooterElementsBlock id='footer'>
+      <div className=' footer-container container grid grid--3-cols'>
         <div className='logo-col'>
-          <img src={logo} alt='' className='logo' />
+          <a href='#index' onClick={handleScrollToTop}>
+            <img src={logo} alt='' className='logo' />
+          </a>
           <div className='social-links'>
             <a href='https://www.facebook.com/thanh.diem.5817300'>
               <FaFacebook className='social-link' />

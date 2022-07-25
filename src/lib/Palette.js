@@ -1,4 +1,4 @@
 const Palette = {
-  yellow: ["#ffd43b", "#ffe066", "#ffec99", "#112A46"],
+  green: ["#d3f9d8", "#b2f2bb", "#8ce99a "],
 };
 export default Palette;
