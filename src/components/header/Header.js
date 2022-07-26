@@ -7,7 +7,7 @@ function Header() {
   const [fixed, setFixed] = useState(false);
   const [nav, setNav] = useState("hidden");
   const setNavBarFixed = () => {
-    if (window.scrollY >= 700) {
+    if (window.scrollY >= 700 && window.innerWidth <= 1440) {
       setFixed(true);
     } else {
       setFixed(false);
@@ -82,8 +82,8 @@ function Header() {
               </Link>
             </li>
           </ul>
-          <div>
-            <button>
+          <div className='header-btns'>
+            <button className='btn-menu'>
               <AiOutlineMenu
                 className={
                   nav === "open"
@@ -93,7 +93,7 @@ function Header() {
                 onClick={handleOpenMainNav}
               />
             </button>
-            <button>
+            <button className='btn-menu btn-close'>
               <AiOutlineClose
                 className={
                   nav === "open"

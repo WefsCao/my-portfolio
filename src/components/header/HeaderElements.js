@@ -13,33 +13,37 @@ export const HeaderBlock = styled.div`
     align-items: center;
     justify-content: space-between;
   }
-  button {
+  .header-btns {
+    display: none;
+    @media (max-width: 59em) {
+      display: block;
+    }
+  }
+  .btn-menu,
+  .btn-close {
     padding: 1rem 2rem;
   }
+
   .header-icon {
     width: 4rem;
     height: 4rem;
-    display: none;
   }
   .menu {
     @media (max-width: 59em) {
-      display: block;
       z-index: 999;
     }
   }
 
   .fixed {
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.1);
     padding: 1rem 4rem;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
-    @media (min-width: 81em) {
-      display: none;
-    }
+
     @media (max-width: 84em) {
       padding-left: 10rem;
     }
@@ -47,7 +51,10 @@ export const HeaderBlock = styled.div`
       width: 90%;
       padding: 1rem 10rem 1rem 6rem;
     }
-    @media (max-width: 59em) {
+    @media (min-width: 68em) {
+      display: none;
+    }
+    @media (min-width: 81em) {
       display: none;
     }
   }
@@ -56,6 +63,10 @@ export const HeaderBlock = styled.div`
     list-style: none;
     display: flex;
     gap: 4.8rem;
+    @media (max-width: 59em) {
+      gap: 10rem;
+      padding: 0;
+    }
   }
   .main-nav-link {
     font-size: 1.6rem;

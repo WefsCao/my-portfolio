@@ -26,6 +26,7 @@ const SkillsElementsBlock = styled.div`
     grid-template-columns: 1fr 1fr;
     justify-self: center;
     column-gap: 2.4rem;
+    row-gap: 8rem;
   }
 `;
 export const ExtraSkills = styled.div`
@@ -119,6 +120,10 @@ const SkillsElements = () => {
             <li className='list-item'>
               <BsCheckLg className='check-icon' />
               <span>ES6+</span>
+            </li>
+            <li className='list-item'>
+              <BsCheckLg className='check-icon' />
+              <span>Asynchronous processing</span>
             </li>
             <li className='list-item'>
               <BsCheckLg className='check-icon' />

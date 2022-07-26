@@ -39,7 +39,7 @@ const HeroElementsBlock = styled.div`
   .hero-img-box {
     background-size: cover;
     background-position: center;
-    transform: translate(250px, -110px);
+    transform: translate(250px, -100px);
     @media (max-width: 75em) {
       transform: translate(200px, -110px);
     }
@@ -47,7 +47,7 @@ const HeroElementsBlock = styled.div`
       transform: translate(200px, -70px);
     }
     @media (max-width: 44em) {
-      transform: translate(30px, -55px);
+      transform: translate(30px, -47px);
     }
   }
   .img {
