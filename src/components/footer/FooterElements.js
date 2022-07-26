@@ -4,6 +4,7 @@ import logo from "../../images/logo.png";
 import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 import Palette from "../../lib/Palette";
+import { Link } from "react-scroll/modules";
 const FooterElementsBlock = styled.div`
   margin-top: 20rem;
   border-top: 1px solid #dadada;
@@ -114,12 +115,15 @@ const FooterElements = () => {
           >
             My Omnifood project
           </a>
-          <a
+          <Link
             className='project-link'
-            href='https://wefscao.github.io/my-portfolio/'
+            to='header'
+            spy={true}
+            smooth={true}
+            duration={500}
           >
             My Portfolio
-          </a>
+          </Link>
           <a className='project-link' href='https://wefscao.github.io/cat/'>
             My Blog Social Project
           </a>

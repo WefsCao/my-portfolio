@@ -23,7 +23,7 @@ function Header() {
   };
   return (
     <>
-      <HeaderBlock>
+      <HeaderBlock id='header'>
         <div className={fixed ? "header-container fixed" : "header-container"}>
           <Link to='/'>
             <img src={logo} alt='header of logo' className='logo' />
