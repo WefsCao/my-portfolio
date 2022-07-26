@@ -116,7 +116,7 @@ const FooterElements = () => {
           </a>
           <a
             className='project-link'
-            href='https://wefscao.github.io/Portfolio/'
+            href='https://wefscao.github.io/my-portfolio/'
           >
             My Portfolio
           </a>
