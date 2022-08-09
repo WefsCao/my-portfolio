@@ -115,6 +115,12 @@ const FooterElements = () => {
           >
             My Omnifood project
           </a>
+          <a
+            className='project-link'
+            href='https://wefscao-natours.netlify.app/'
+          >
+            My Na-tours project
+          </a>
           <Link
             className='project-link'
             to='header'
